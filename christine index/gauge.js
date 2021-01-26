@@ -64,28 +64,28 @@ setTimeout(function () {
     chart.load({
         columns: [['data', 205]]
     });
-}, 600);
+}, 1000);
 
 setTimeout(function () {
     chart.load({
         columns: [['data', 210]]
     });
-}, 700);
+}, 1500);
 
 setTimeout(function () {
     chart.load({
         columns: [['data', 215]]
     });
-}, 800);
+}, 2000);
 
 setTimeout(function () {
     chart.load({
         columns: [['data', 220]]
     });
-}, 900);
+}, 2500);
 
 setTimeout(function () {
     chart.load({
         columns: [['data']]
     });
-}, 1000);
+}, 3000);

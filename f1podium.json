@@ -1,0 +1,36 @@
+{
+ "selection1": [
+
+  {
+   "Bottas": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/valbot01.png.transform/2col/image.png"
+  },
+  
+  
+  {
+   "Hamilton": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/lewham01.png.transform/2col/image.png"
+  },
+  
+  {
+   "Verstappen": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/maxver01.png.transform/2col/image.png"
+  },
+  
+  {
+   "Leclerc": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/chalec01.png.transform/2col/image.png"
+  },
+  
+  
+  {
+   "Vettel": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/sebvet01.png.transform/2col/image.png"
+  },
+  {
+    "Gasly":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/piegas01.png.transform/2col/image.png"
+  },
+    {
+    "Sainz":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/carsai01.png.transform/2col/image.png"
+  },
+  {
+    "Kvyat":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2019/dankvy01.png.transform/2col/image.png"
+    }
+  
+ ]
+}

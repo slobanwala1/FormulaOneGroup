@@ -1,0 +1,52 @@
+{
+ "selection1": [
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Bahrain.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Emilia%20Romagna%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Imola.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/TBC%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/TBC.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Spain.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Monaco%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Monaco.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Azerbaijan.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Canada.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/France%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/France.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Austria%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Austria.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great%20Britain%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Great_Britain.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Hungary%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Hungary.html"
+  },
+  {
+   "image": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Belgium%20carbon.png.transform/2col/image.png",
+   "url": "https://www.formula1.com/en/racing/2021/Belgium.html"
+  }
+ ]
+}
