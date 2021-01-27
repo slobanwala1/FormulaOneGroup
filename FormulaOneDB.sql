@@ -1,4 +1,4 @@
--- Create all 8 tables for Excellent_Simpson_Analysis db
+-- Create all 9 tables for FormulaOneDB
 
 -- Drop tables using CASCADE to remove dependencies as well
 DROP TABLE IF EXISTS circuits CASCADE;
@@ -20,18 +20,17 @@ DROP TABLE IF EXISTS lap_times CASCADE;
 DROP TABLE IF EXISTS qualifying CASCADE;
 
 
-
 CREATE TABLE circuits (
 	circuitId INT NOT NULL UNIQUE,
 	circuitRef VARCHAR(50) NOT NULL,
-	circuit_name VARCHAR(50) NOT NULL,
+	circuit_name VARCHAR(50) NOT NULL UNIQUE,
  	PRIMARY KEY(circuitId)
 );
 
 
 
 CREATE TABLE races (
-	raceId INT NOT NULL,
+	raceId INT NOT NULL UNIQUE,
 	race_year INT NOT NULL,
 	round INT NOT NULL,
 	circuitId INT NOT NULL,
@@ -57,8 +56,8 @@ CREATE TABLE constructors (
 
 CREATE TABLE constructor_results (
 	constructorResultsId INT NOT NULL,
-	raceId VARCHAR(150) NOT NULL,
-	constructorId VARCHAR(150) NOT NULL,
+	raceId INT NOT NULL,
+	constructorId INT NOT NULL,
 	points INT NOT NULL,
 	status INT,
 	PRIMARY KEY(constructorResultsId),
