@@ -50,12 +50,15 @@ CREATE TABLE constructors (
 	PRIMARY KEY(constructorId)
 );
 
-CREATE TABLE Guest_Stars_All (
-	Season_Number INT NOT NULL,
-	Guest_Star_Name VARCHAR(150) NOT NULL,
-	Episode_title VARCHAR(150) NOT NULL,
-	PRIMARY KEY(Guest_Star_Name, Episode_title),
-	FOREIGN KEY(Season_Number) REFERENCES Season_Year(Season_Number)
+CREATE TABLE constructor_results (
+	constructorResultsId INT NOT NULL,
+	raceId VARCHAR(150) NOT NULL,
+	constructorId VARCHAR(150) NOT NULL,
+	points INT NOT NULL,
+	status INT,
+	PRIMARY KEY(constructorResultsId),
+	FOREIGN KEY(raceId) REFERENCES races(raceId),
+	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
 );
 
 CREATE TABLE Guest_Star_Season (
