@@ -35,7 +35,7 @@ CREATE TABLE races (
 	circuit_name VARCHAR(50) NOT NULL,
 	circuit_date DATE NOT NULL,
 	circuit_time TIME,
-	url VARCHAR(100),
+	url VARCHAR(150),
  	PRIMARY KEY(raceId),
 	FOREIGN KEY(circuitId) REFERENCES circuits(circuitId),
 	FOREIGN KEY(circuit_name) REFERENCES circuits(circuit_name)
@@ -43,10 +43,11 @@ CREATE TABLE races (
 
 CREATE TABLE constructors (
 	constructorId INT NOT NULL,
-	Name_Rank INTEGER NOT NULL,
-	Character_Name VARCHAR(150) NOT NULL,
-	PRIMARY KEY(Season_Year_Aired, Character_Name),
-	FOREIGN KEY(Season_Year_Aired) REFERENCES Season_Year(Season_Year_Aired)
+	constructorRef VARCHAR(100) NOT NULL,
+	constructor_name VARCHAR(50) NOT NULL,
+	nationality VARCHAR(50) NOT NULL,
+	url VARCHAR(150),
+	PRIMARY KEY(constructorId)
 );
 
 CREATE TABLE Guest_Stars_All (
