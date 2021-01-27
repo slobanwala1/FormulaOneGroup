@@ -19,19 +19,24 @@ DROP TABLE IF EXISTS lap_times CASCADE;
 
 DROP TABLE IF EXISTS qualifying CASCADE;
 
-CREATE TABLE Season_Year (
-	Season_Number INT NOT NULL UNIQUE,
-	Season_Year_Aired INT NOT NULL UNIQUE, 
- 	PRIMARY KEY(Season_Number)
+CREATE TABLE circuits (
+	circuitId INT NOT NULL UNIQUE,
+	circuitRef VARCHAR(50) NOT NULL,
+	circuit_name VARCHAR(50) NOT NULL,
+ 	PRIMARY KEY(circuitId)
 );
 
 -- Did not get clean data for all episodes and titles
-CREATE TABLE All_Episodes (
-	Season_Number INT NOT NULL,
-	Episode_Number INTEGER NOT NULL,
-	Episode_Title VARCHAR(50),
- 	PRIMARY KEY(Season_Number, Episode_Number),
-	FOREIGN KEY(Season_Number) REFERENCES Season_Year(Season_Number)
+CREATE TABLE races (
+	raceId INT NOT NULL,
+	race_year INT NOT NULL,
+	round INT NOT NULL,
+	circuitId INT NOT NULL,
+	circuit_name VARCHAR(50) NOT NULL,
+	circuit_date DATE NOT NULL,
+	circuit_time TIME,
+	url VARCHAR(100),
+ 	PRIMARY KEY(raceId)
 );
 
 CREATE TABLE Baby_Names_Popularity (
