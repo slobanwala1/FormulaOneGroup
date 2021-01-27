@@ -74,6 +74,19 @@ CREATE TABLE constructor_standings (
 	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
 );
 
+CREATE TABLE drivers (
+	driverId INT NOT NULL,
+	driverRef VARCHAR(50) NOT NULL,
+	driver_number INT,
+	code VARCHAR(5),
+	forename VARCHAR(20) NOT NULL,
+	surname VARCHAR(20) NOT NULL,
+	dob DATE NOT NULL,
+	nationality VARCHAR(20) NOT NULL,
+	url VARCHAR(150),
+	PRIMARY KEY(driverId)
+);
+
 CREATE TABLE results (
 	resultId INT NOT NULL,
 	raceId INT NOT NULL,
@@ -94,17 +107,11 @@ CREATE TABLE results (
 	statusId INT NOT NULL,
 	PRIMARY KEY(resultId),
 	FOREIGN KEY(raceId) REFERENCES races(raceId),
-	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
+	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId),
+	FOREIGN KEY(driverId) REFERENCES drivers(driverId)
 );
 
-CREATE TABLE Ratings (
-	Season_Number INT NOT NULL,
-	Number_of_Episodes INT NOT NULL,
-	Season_Rank INT NOT NULL,
-	Rating FLOAT NOT NULL,
-	PRIMARY KEY(Season_Number),
-	FOREIGN KEY(Season_Number) REFERENCES Season_Year(Season_Number)
-);
+
 
 CREATE TABLE Episode_Phrases (
 	Season_Number INT NOT NULL,
