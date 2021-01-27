@@ -61,11 +61,17 @@ CREATE TABLE constructor_results (
 	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
 );
 
-CREATE TABLE Guest_Star_Season (
-	Season_Number INT NOT NULL,
-	Count_of_Appearances INT NOT NULL,
-	PRIMARY KEY(Season_Number),
-	FOREIGN KEY(Season_Number) REFERENCES Season_Year(Season_Number)
+CREATE TABLE constructor_standings (
+	constructorStandingsId INT NOT NULL,
+	raceId INT NOT NULL,
+	constructorId INT NOT NULL,
+	points INT NOT NULL,
+	constructor_position INT NOT NULL,
+	positionText INT NOT NULL,
+	wins INT NOT NULL,
+	PRIMARY KEY(constructorStandingsId),
+	FOREIGN KEY(raceId) REFERENCES races(raceId),
+	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
 );
 
 CREATE TABLE Viewers (
