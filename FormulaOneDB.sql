@@ -11,11 +11,11 @@ DROP TABLE IF EXISTS constructor_results CASCADE;
 
 DROP TABLE IF EXISTS constructor_standings CASCADE;
 
-DROP TABLE IF EXISTS results CASCADE;
-
 DROP TABLE IF EXISTS drivers CASCADE;
 
-DROP TABLE IF EXISTS lap_times CASCADE;
+DROP TABLE IF EXISTS results CASCADE;
+
+TABLE IF EXISTS lap_times CASCADE;
 
 DROP TABLE IF EXISTS qualifying CASCADE;
 
@@ -113,7 +113,7 @@ CREATE TABLE results (
 
 
 
-CREATE TABLE Episode_Phrases (
+CREATE TABLE lap_times (
 	Season_Number INT NOT NULL,
 	Episode_Number INT NOT NULL,
 	Most_common_phrase VARCHAR(150) NOT NULL,
