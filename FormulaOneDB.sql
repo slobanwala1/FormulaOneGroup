@@ -15,9 +15,11 @@ DROP TABLE IF EXISTS drivers CASCADE;
 
 DROP TABLE IF EXISTS results CASCADE;
 
-TABLE IF EXISTS lap_times CASCADE;
+DROP TABLE IF EXISTS lap_times CASCADE;
 
 DROP TABLE IF EXISTS qualifying CASCADE;
+
+
 
 CREATE TABLE circuits (
 	circuitId INT NOT NULL UNIQUE,
@@ -26,7 +28,8 @@ CREATE TABLE circuits (
  	PRIMARY KEY(circuitId)
 );
 
--- Did not get clean data for all episodes and titles
+
+
 CREATE TABLE races (
 	raceId INT NOT NULL,
 	race_year INT NOT NULL,
@@ -41,6 +44,7 @@ CREATE TABLE races (
 	FOREIGN KEY(circuit_name) REFERENCES circuits(circuit_name)
 );
 
+
 CREATE TABLE constructors (
 	constructorId INT NOT NULL,
 	constructorRef VARCHAR(100) NOT NULL,
@@ -49,6 +53,7 @@ CREATE TABLE constructors (
 	url VARCHAR(150),
 	PRIMARY KEY(constructorId)
 );
+
 
 CREATE TABLE constructor_results (
 	constructorResultsId INT NOT NULL,
@@ -60,6 +65,7 @@ CREATE TABLE constructor_results (
 	FOREIGN KEY(raceId) REFERENCES races(raceId),
 	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
 );
+
 
 CREATE TABLE constructor_standings (
 	constructorStandingsId INT NOT NULL,
@@ -74,6 +80,7 @@ CREATE TABLE constructor_standings (
 	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
 );
 
+
 CREATE TABLE drivers (
 	driverId INT NOT NULL,
 	driverRef VARCHAR(50) NOT NULL,
@@ -86,6 +93,7 @@ CREATE TABLE drivers (
 	url VARCHAR(150),
 	PRIMARY KEY(driverId)
 );
+
 
 CREATE TABLE results (
 	resultId INT NOT NULL,
@@ -112,11 +120,31 @@ CREATE TABLE results (
 );
 
 
-
 CREATE TABLE lap_times (
-	Season_Number INT NOT NULL,
-	Episode_Number INT NOT NULL,
-	Most_common_phrase VARCHAR(150) NOT NULL,
-	Occurences INT NOT NULL,
-	FOREIGN KEY(Season_Number) REFERENCES Season_Year(Season_Number)
+	raceId INT NOT NULL,
+	driverId INT NOT NULL,
+	lap VARCHAR(150) NOT NULL,
+	lap_time_position INT NOT NULL,
+	lap_time_seconds TIME NOT NULL,
+	milliseconds INT NOT NULL,
+	FOREIGN KEY(raceId) REFERENCES races(raceId),
+	FOREIGN KEY(driverId) REFERENCES drivers(driverId)
 );
+
+
+CREATE TABLE qualifying (
+	qualifyId INT NOT NULL UNIQUE,
+	raceId INT NOT NULL,
+	driverId INT NOT NULL,
+	constructorId INT NOT NULL,
+	qualify_number INT NOT NULL,
+	qualify_position INT NOT NULL,
+	q1 TIME,
+	q2 TIME,
+	q3 TIME,
+ 	PRIMARY KEY(qualifyId),
+	FOREIGN KEY(raceId) REFERENCES races(raceId),
+	FOREIGN KEY(driverId) REFERENCES drivers(driverId),
+	FOREIGN KEY(constructorId) REFERENCES constructors(constructorId)
+);
+
