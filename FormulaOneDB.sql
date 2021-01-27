@@ -36,11 +36,13 @@ CREATE TABLE races (
 	circuit_date DATE NOT NULL,
 	circuit_time TIME,
 	url VARCHAR(100),
- 	PRIMARY KEY(raceId)
+ 	PRIMARY KEY(raceId),
+	FOREIGN KEY(circuitId) REFERENCES circuits(circuitId),
+	FOREIGN KEY(circuit_name) REFERENCES circuits(circuit_name)
 );
 
-CREATE TABLE Baby_Names_Popularity (
-	Season_Year_Aired INT NOT NULL,
+CREATE TABLE constructors (
+	constructorId INT NOT NULL,
 	Name_Rank INTEGER NOT NULL,
 	Character_Name VARCHAR(150) NOT NULL,
 	PRIMARY KEY(Season_Year_Aired, Character_Name),
