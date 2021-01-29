@@ -22,22 +22,7 @@ def entry():
 
 @app.route('/2019')
 def access_data():
-    # results = []
-    # results = jsonify(circuitList)
-    # return render_template('index.html', data = records, data2 = circuitList)
     return render_template('index.html', data = circuitList)
-    # if year == '2019':
-    #     results = jsonify(circuitList)
-    #     # return render_template('index.html', data = records, data2 = circuitList)
-    #     return render_template('index.html', data = records, data2 = results)
-    # else:
-    #     # return render_template('index.html', data = records, data2 = circuitList)
-    #     return jsonify(circuitList)
-
-
-# @app.route('/dashboard/<data>')
-# def access_databoard():
-#     return render_templa
 
 if __name__ == "__main__":
     app.run()
