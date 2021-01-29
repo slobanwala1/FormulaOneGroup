@@ -35,6 +35,9 @@ var chart = c3.generate({
 });
 var ticksValues = [200, 205, 210, 215, 217, 219, 221, 223];
 var test = true;
+
+
+
 setInterval(function(){
   var ticks = d3.select('.c3-chart-arcs')
           .append('g')
@@ -84,7 +87,7 @@ setInterval(function(){
   }, 3000);
   setTimeout(function () {
       chart.load({
-          columns: [['data']]
+          columns: [['data', 225]]
       });
   }, 4000);
 }, 3000);
