@@ -28,16 +28,17 @@ d3.json(circuitData, function(data) {
     zoom: 2.5,
     layers: [streetmap, circuits]
   });
+  // 
   // loop through the JSON and create markers for all circuits
- 
-  for(let i=0;i < data.length;i++ ){
+   for(let i=0;i < data.length;i++ ){
     let d = data[i];
     var marker = L.marker([d.lat, d.lng], {
       draggable: true,
       title: d.name
-    }).addTo(myMap);
+    }).addTo(myMap).on('click', onClick);
+    function onClick(e) {alert(e.latlng);}
 
     // Binding a pop-up to our marker
-    marker.bindPopup(d.name);
+    // marker.bindPopup("<a href=https://www.w3schools.com>Visit W3Schools</a>");
   }
 });
