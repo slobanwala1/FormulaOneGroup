@@ -17,9 +17,12 @@
   <link rel="stylesheet" type="text/css" href="static/docs/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="static/docs/css/style.css">
   <link href="./f1-logo-red.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16"/>
+
   <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
 </head>
-
+<script>
+    var circuit_data = JSON.parse('{{data | tojson}}');
+</script>
 <body>
   <h1>
   <img src="static/images/f1-logo-red.png" width="95" height="60" style="width: 5%; float: left"/>

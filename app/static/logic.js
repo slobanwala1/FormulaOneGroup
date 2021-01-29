@@ -1,8 +1,15 @@
 var circuitData="static/circuits.json";
 var circuitJson;
 
+circuit_data.forEach(element => {
+    console.log(element.circuit_name);
+    console.log(element.lat);
+    console.log(element.lng);
+    console.log(element.url);
+});
 // Perform a GET request to the query URL
 d3.json(circuitData, function(data) {
+
 
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.place +
@@ -39,8 +46,13 @@ d3.json(circuitData, function(data) {
     }).addTo(myMap).on('click', onClick);
 
     function onClick(e) {
+      // To get all contents of e console log it instead of alert
+      // console.log(e);
+      // e.sourceTarget.options.title has the circuit track title
+      // console.log(e.sourceTarget.options.title);
       //alert(e.latlng);
-      window.open(this.options.win_url,"_self");
+      // window.open(this.options.win_url,"_self");
+      window.open('http://127.0.0.1:5000/dashboard/'+e.sourceTarget.options.title,"_self");
     }
 
     // Binding a pop-up to our marker
