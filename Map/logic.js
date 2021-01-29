@@ -34,9 +34,14 @@ d3.json(circuitData, function(data) {
     let d = data[i];
     var marker = L.marker([d.lat, d.lng], {
       draggable: true,
-      title: d.name
+      title: d.name, 
+      win_url: d.url
     }).addTo(myMap).on('click', onClick);
-    function onClick(e) {alert(e.latlng);}
+  
+    function onClick(e) {
+      //alert(e.latlng);
+      window.open(this.options.win_url,"_self");
+    }
 
     // Binding a pop-up to our marker
     // marker.bindPopup("<a href=https://www.w3schools.com>Visit W3Schools</a>");
