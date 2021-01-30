@@ -2,7 +2,7 @@
 var chart = c3.generate({
     data: {
         columns: [
-            ['fastestLapSpeed', 201] //so i'm going to add the data here from the sql data.
+            ['Driver Name', 201] //so i'm going to add the data here from the sql data.
         ],
         type: 'gauge',
         onclick: function (d, i) { console.log("onclick", d, i); },
@@ -17,7 +17,7 @@ var chart = c3.generate({
             show: false // to turn off the min/max labels.
         },
     min: 200, //I'M GOING TO CHANGE THIS SO THAT THE MIN WILL BE THE SLOWEST FAST LAP
-    max: 225, //I'M GOING TO CHANGE THIS SO THAT THIS IS THE FASTEST FAST LAP
+    max: 231.5, //I'M GOING TO CHANGE THIS SO THAT THIS IS THE FASTEST FAST LAP
     units: ' %',
     width: 39 // for adjusting arc thickness
     },
@@ -31,7 +31,7 @@ var chart = c3.generate({
     },
     size: {
         height: 180
-    }
+    },
 });
 var ticksValues = [200, 205, 210, 215, 217, 219, 221, 223];
 var test = true;
@@ -87,7 +87,9 @@ setInterval(function(){
   }, 3000);
   setTimeout(function () {
       chart.load({
-          columns: [['data', 225]]
+          columns: [['data', 231]]
       });
   }, 4000);
-}, 3000);
+}, 4000);
+
+//https://c3js.org/samples/chart_gauge.html
