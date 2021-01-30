@@ -30,6 +30,9 @@ def access_dashboard(circuit):
     print(circuit, file=sys.stderr)
     return render_template('dashboard-index.html', data = circuitList)
 
+@app.route('/data')
+def access_dataTwo():
+    return jsonify(circuitList)
 
 if __name__ == "__main__":
     app.run()
