@@ -15,7 +15,21 @@ circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.849
                {"circuit_name":"Red Bull Ring", "lat":"47.2197", "lng":"14.7647", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"},
                {"circuit_name":"Silverstone Circuit", "lat":"52.0786", "lng":"-1.01694", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"}]
 
+top speed, lap time for each lap of that race,
 
+line graph:
+all drivers on race
+x = number of lap
+y = time
+
+circuitDashboard = [{"teamName":"test1", "driver1_name":"", "driver2_name":"", "driver1_topSpeed":"", "driver2_topSpeed":"", "circuit_topSpeed", "driver1_points":"",
+                     "driver2_points":"", "circuit_name":"", "driver1_Lap1":"", "driver2_Lap1Time":""},
+                     {"teamName":"test1"}]
+circuitTopTen = [{"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""},
+                 {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""},
+                 {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""},
+                 {"driver_name":"", "teamName":"test1", "time":""}]
+mapURl = [{"mapURL":"http://127.0.0.1:5000/2019"}]
 
 @app.route('/')
 def entry():
@@ -32,6 +46,10 @@ def access_dashboard(circuit):
 
 @app.route('/data')
 def access_dataTwo():
+    return jsonify(circuitList)
+
+@app.route('/data/<request_params>')
+def access_dataThree():
     return jsonify(circuitList)
 
 if __name__ == "__main__":
