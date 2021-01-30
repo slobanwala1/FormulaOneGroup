@@ -1,5 +1,6 @@
 // shanil testing
 var obj;
+var curTeam;
 
 function fetchData() {
   var circuitName = circuit_name;
@@ -17,8 +18,21 @@ function fetchData() {
   .then(() => console.log(obj));
 }
 
-function optionChanged(value) {
-
+function optionChanged(team_name) {
+  console.log("selected:"+team_name);
+  var keys = Object.keys(obj);
+  for (const key of keys) {
+    // console.log(obj[key]);
+    // console.log(obj[key].teamName);
+    if (obj[key].teamName == team_name) {
+      console.log("HIT TEAM"+obj[key].teamName);
+      //console.log(typeof obj[key]);
+      // curTeam = obj[key].teamName;
+      displayGauge(obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_topSpeed, obj[key].driver2_topSpeed, obj[key].circuit_topSpeed);
+    }
+  }
+  // console.log('cur team:');
+  // console.log(curTeam);
 }
 
 function init() {
@@ -26,7 +40,10 @@ function init() {
 }
 
 init();
-displayGauge('driver1_name', 'driver2_name', '220', '230', '250');
+// displayGauge('driver1_name', 'driver2_name', '220', '230', '250');
+
+
+
 // // Create an array of each country's numbers
 // var mercedes = Object.values(data.mercedes);
 // var ferrari = Object.values(data.ferrari);

@@ -15,10 +15,10 @@ circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.849
                {"circuit_name":"Red Bull Ring", "lat":"47.2197", "lng":"14.7647", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"},
                {"circuit_name":"Silverstone Circuit", "lat":"52.0786", "lng":"-1.01694", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"}]
 
-circuitTeamInfo = [{"teamName":"test1", "driver1_name":"test1name", "driver2_name":"test2name", "driver1_topSpeed":"200.20", "driver2_topSpeed":"180.59",
-                    "circuit_topSpeed":"250.10", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"},
-                    {"teamName":"test1", "driver1_name":"test1name", "driver2_name":"test2name", "driver1_topSpeed":"200.20", "driver2_topSpeed":"180.59",
-                    "circuit_topSpeed":"250.10", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"}]
+circuitTeamInfo = [{"teamName":"Ferrari", "driver1_name":"Ferrari Driver1", "driver2_name":"Ferrari Driver2", "driver1_topSpeed":"215", "driver2_topSpeed":"225",
+                    "circuit_topSpeed":"231", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"},
+                    {"teamName":"Haas", "driver1_name":"Haas Driver1", "driver2_name":"Haas Driver2", "driver1_topSpeed":"209", "driver2_topSpeed":"219",
+                    "circuit_topSpeed":"228", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"}]
 
 circuitTeamLapInfo = [{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
                   {"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
