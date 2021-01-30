@@ -1,6 +1,4 @@
-var circuitData="static/circuits.json";
 var circuitJson;
-
 
 // Perform a GET request to the query URL
 d3.json("/data", function(data) {
