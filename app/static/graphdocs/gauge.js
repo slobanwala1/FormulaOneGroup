@@ -7,9 +7,9 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
               [driver1_name, driver1_topSpeed] //so i'm going to add the data here from the sql data.
           ],
           type: 'gauge',
-          onclick: function (d, i) { console.log("onclick", d, i); },
-          onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-          onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+          onclick: function (d, i) {  },
+          onmouseover: function (d, i) {  },
+          onmouseout: function (d, i) {  }
       },
       gauge: {
          labels: {                    //could be labels. the docs conflct
@@ -100,9 +100,9 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
               [driver2_name, driver2_topSpeed] //so i'm going to add the data here from the sql data.
           ],
           type: 'gauge',
-          onclick: function (d, i) { console.log("onclick", d, i); },
-          onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-          onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+          onclick: function (d, i) {  },
+          onmouseover: function (d, i) {  },
+          onmouseout: function (d, i) {  i); }
       },
       gauge: {
          labels: {                    //could be labels. the docs conflct
