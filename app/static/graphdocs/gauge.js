@@ -102,7 +102,7 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
           type: 'gauge',
           onclick: function (d, i) {  },
           onmouseover: function (d, i) {  },
-          onmouseout: function (d, i) {  i); }
+          onmouseout: function (d, i) {  ); }
       },
       gauge: {
          labels: {                    //could be labels. the docs conflct
