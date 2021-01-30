@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../static/docs/css/style.css">
   <link href="../static/images/f1-logo-red.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16"/>
   <script src="../static/graphdocs/c3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <script>
     var circuit_name = JSON.parse('{{data | tojson}}');
@@ -45,7 +46,8 @@
         <br>
         <br>
         <br>
-        Pie Chart for % of points scored by each driver
+        <div id="pie_chart"></div>
+        <br>
       </div>
       <div class="col-sm-8" align="center">
         <h5 style="width: 50%; float:left">

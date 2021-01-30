@@ -18,6 +18,29 @@ function fetchData() {
   .then(() => console.log(obj));
 }
 
+// // Display the default plot
+function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, driver2_points) {
+  console.log(teamName);
+  console.log(driver1_name);
+  console.log(driver2_name);
+  console.log(driver1_points);
+  console.log(driver2_points);
+  var totalPoints = parseInt(driver1_points+driver2_points);
+  var data = [{
+    name: teamName+' Point Breakdown',
+    values: [parseInt(driver1_points), parseInt(driver2_points)],
+    labels: [driver1_name, driver2_name],
+    type: "pie"
+  }];
+
+  var layout = {
+    height: 300,
+    width: 400
+  };
+
+  Plotly.newPlot("pie_chart", data, layout);
+}
+
 function optionChanged(team_name) {
   console.log("selected:"+team_name);
   var keys = Object.keys(obj);
@@ -29,6 +52,7 @@ function optionChanged(team_name) {
       //console.log(typeof obj[key]);
       // curTeam = obj[key].teamName;
       displayGauge(obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_topSpeed, obj[key].driver2_topSpeed, obj[key].circuit_topSpeed);
+      displayPieChart(obj[key].teamName, obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_points, obj[key].driver2_points);
     }
   }
   // console.log('cur team:');
