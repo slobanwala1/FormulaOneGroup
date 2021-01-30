@@ -15,7 +15,7 @@ var chart = c3.generate({
       names: {
         data1: 'Driver 1',
         data2: 'Driver 2'
-      }
+      },
       legend: {
           show: true,
           position: 'inset',
