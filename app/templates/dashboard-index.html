@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../static/docs/css/style.css">
   <link href="../static/images/f1-logo-red.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16"/>
   <script src="../static/graphdocs/c3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <script>
     var circuit_name = JSON.parse('{{data | tojson}}');
@@ -29,23 +30,24 @@
         <div class="well">
           <h5>Team:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)">
-            <option value="mercedes">Mercedes-Benz</option>
-            <option value="ferrari">Ferrari</option>
-            <option value="redBull">Red Bull Racing</option>
-            <option value="mclaren">McLaren</option>
-            <option value="renault">Renault</option>
-            <option value="toroRosso">Toro Rosso</option>
-            <option value="racingPoint">Racing Point</option>
-            <option value="alfaRomeo">Alfa Romeo</option>
-            <option value="haas">Haas</option>
-            <option value="williams">Williams</option>
+            <option value="Mercedes">Mercedes-Benz</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="RedBull">Red Bull Racing</option>
+            <option value="Mclaren">McLaren</option>
+            <option value="Renault">Renault</option>
+            <option value="ToroRosso">Toro Rosso</option>
+            <option value="RacingPoint">Racing Point</option>
+            <option value="AlfaRomeo">Alfa Romeo</option>
+            <option value="Haas">Haas</option>
+            <option value="Williams">Williams</option>
           </select>
         </div>
         <br>
         <br>
         <br>
         <br>
-        Pie Chart for % of points scored by each driver
+        <div id="pie_chart"></div>
+        <br>
       </div>
       <div class="col-sm-8" align="center">
         <h5 style="width: 50%; float:left">
