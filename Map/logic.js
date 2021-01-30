@@ -29,13 +29,25 @@ d3.json(circuitData, function(data) {
     layers: [streetmap, circuits]
   });
   // 
+  var greenIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  
+  //L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
   // loop through the JSON and create markers for all circuits
+
    for(let i=0;i < data.length;i++ ){
     let d = data[i];
     var marker = L.marker([d.lat, d.lng], {
       draggable: true,
       title: d.name, 
-      win_url: d.url
+      win_url: d.url, 
+      icon: greenIcon
     }).addTo(myMap).on('click', onClick);
   
     function onClick(e) {
