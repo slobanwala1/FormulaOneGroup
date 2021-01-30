@@ -53,6 +53,7 @@ function optionChanged(team_name) {
       // curTeam = obj[key].teamName;
       displayGauge(obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_topSpeed, obj[key].driver2_topSpeed, obj[key].circuit_topSpeed);
       displayPieChart(obj[key].teamName, obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_points, obj[key].driver2_points);
+      displayLineChart();
     }
   }
   // console.log('cur team:');
