@@ -15,21 +15,27 @@ circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.849
                {"circuit_name":"Red Bull Ring", "lat":"47.2197", "lng":"14.7647", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"},
                {"circuit_name":"Silverstone Circuit", "lat":"52.0786", "lng":"-1.01694", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"}]
 
-top speed, lap time for each lap of that race,
+circuitTeamInfo = [{"teamName":"test1", "driver1_name":"test1name", "driver2_name":"test2name", "driver1_topSpeed":"200.20", "driver2_topSpeed":"180.59",
+                    "circuit_topSpeed":"250.10", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"},
+                    {"teamName":"test1", "driver1_name":"test1name", "driver2_name":"test2name", "driver1_topSpeed":"200.20", "driver2_topSpeed":"180.59",
+                    "circuit_topSpeed":"250.10", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"}]
 
-line graph:
-all drivers on race
-x = number of lap
-y = time
+circuitTeamLapInfo = [{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
+                  {"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
+                  {"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"}]
 
-circuitDashboard = [{"teamName":"test1", "driver1_name":"", "driver2_name":"", "driver1_topSpeed":"", "driver2_topSpeed":"", "circuit_topSpeed", "driver1_points":"",
-                     "driver2_points":"", "circuit_name":"", "driver1_Lap1":"", "driver2_Lap1Time":""},
-                     {"teamName":"test1"}]
-circuitTopTen = [{"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""},
-                 {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""},
-                 {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""}, {"driver_name":"", "teamName":"test1", "time":""},
-                 {"driver_name":"", "teamName":"test1", "time":""}]
-mapURl = [{"mapURL":"http://127.0.0.1:5000/2019"}]
+circuitTopTen = [{"driver_name":"test1", "teamName":"test1", "time":"01:30.7", "position":'1'},
+                 {"driver_name":"name2", "teamName":"test2", "time":"01:30.7", "position":'2'},
+                 {"driver_name":"name1", "teamName":"test3", "time":"01:32.7", "position":'3'},
+                 {"driver_name":"name4", "teamName":"test4", "time":"01:31.7", "position":'4'},
+                 {"driver_name":"name2", "teamName":"test5", "time":"01:34.7", "position":'5'},
+                 {"driver_name":"name6", "teamName":"test6", "time":"01:33.7", "position":'6'},
+                 {"driver_name":"name3", "teamName":"test7", "time":"01:36.7", "position":'7'},
+                 {"driver_name":"name8", "teamName":"test8", "time":"01:35.7", "position":'8'},
+                 {"driver_name":"name4", "teamName":"test9", "time":"01:38.7", "position":'9'},
+                 {"driver_name":"name10", "teamName":"test10", "time":"01:37.7", "position":'10'}]
+
+mapURL = [{"mapURL":"http://127.0.0.1:5000/2019"}]
 
 @app.route('/')
 def entry():
@@ -42,15 +48,23 @@ def access_data():
 @app.route('/dashboard/<circuit>')
 def access_dashboard(circuit):
     print(circuit, file=sys.stderr)
-    return render_template('dashboard-index.html', data = circuitList)
+    return render_template('dashboard-index.html', data = circuit)
 
 @app.route('/data')
 def access_dataTwo():
     return jsonify(circuitList)
 
 @app.route('/data/<request_params>')
-def access_dataThree():
-    return jsonify(circuitList)
+def access_dataThree(request_params):
+    key, value = request_params.split('_')
+    if value == 'CircuitInfo':
+        return jsonify(circuitTeamInfo)
+    elif value == 'LapInfo':
+        return jsonify(circuitTeamLapInfo)
+    elif value == 'TopTen':
+        return jsonify(circuitTopTen)
+    else:
+        return jsonify(circuitList)
 
 if __name__ == "__main__":
     app.run()

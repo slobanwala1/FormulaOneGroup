@@ -1,3 +1,32 @@
+// shanil testing
+console.log('hi');
+var obj;
+
+function fetchData() {
+  var circuitName = circuit_name;
+  var infoType = 'CircuitInfo'; // either 'CircuitInfo', 'LapInfo' or 'TopTen'
+  var params = circuitName.concat('_', infoType);
+  fetch(`/data/${params}`, {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
+  .then(res => res.json())
+  .then(data => obj = data)
+  .then(() => console.log(obj));
+}
+
+function optionChanged(value) {
+
+}
+
+function init() {
+  fetchData();
+}
+
+init();
 // // Create an array of each country's numbers
 // var mercedes = Object.values(data.mercedes);
 // var ferrari = Object.values(data.ferrari);
@@ -80,5 +109,3 @@
 // }
 
 // init();
-
- 
