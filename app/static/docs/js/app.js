@@ -1,5 +1,4 @@
 // shanil testing
-console.log('hi');
 var obj;
 
 function fetchData() {
