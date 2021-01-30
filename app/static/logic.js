@@ -38,7 +38,6 @@ d3.json("/data", function(data) {
     shadowSize: [41, 41]
   });
   // loop through the JSON and create markers for all circuits
-  console.log("here i am");
   // data.forEach(element => {
   //     console.log(element.circuit_name);
   //     console.log(element.lat);
