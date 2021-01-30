@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2019 {Grand Prix} - {Team}</title>
   <link rel="stylesheet" type="text/css" href="../static/docs/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../static/docs/css/style.css">
-  <link href="./f1-logo-red.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16"/>
-
+  <link href="../static/images/f1-logo-red.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16"/>
+  <script src="../static/graphdocs/c3.min.js"></script>
 </head>
 <script>
     var circuit_name = JSON.parse('{{data | tojson}}');
@@ -57,18 +58,18 @@
         <br>
         <br>
         <br>
-        <div style="width: 50%; float:left">
+        <div id="chart" style="width: 50%; float:left">
           This is where the gauge for Driver 1 will go.
        </div>
 
-       <div style="width: 50%; float:right">
+       <div id="chart2" style="width: 50%; float:right">
           This is where the gauge for Driver 2 will go.
        </div>
         <br>
         <br>
         <br>
         <br>
-        <div id="chart"></div>
+        <!-- <div id="chart"></div> -->
       </div>
       <div class="col-sm-2" align="left">
         <h5>Top 10 Finishers</h5>
@@ -173,8 +174,12 @@
 
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../static/graphdocs/gauge.js"></script>
   <script type="text/javascript" src="../static/docs/js/app.js"></script>
-
 </body>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
+<!-- <script type="text/javascript" src="../static/graphdocs/gauge.js"></script> -->
+<!--<script src="../static/graphdocs/needle.js" type="text/javascript"></script>-->
+<!-- <script src="../static/graphdocs/linechart.js" type="text/javascript"></script> -->
 </html>

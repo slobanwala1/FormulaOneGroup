@@ -26,6 +26,7 @@ function init() {
 }
 
 init();
+displayGauge('driver1_name', 'driver2_name', '220', '230', '250');
 // // Create an array of each country's numbers
 // var mercedes = Object.values(data.mercedes);
 // var ferrari = Object.values(data.ferrari);
