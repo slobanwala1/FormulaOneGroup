@@ -3,7 +3,6 @@ var circuitJson;
 // Perform a GET request to the query URL
 d3.json("/data", function(data) {
 
-
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.place +
       "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
@@ -44,27 +43,44 @@ d3.json("/data", function(data) {
   //     console.log(element.lng);
   //     console.log(element.url);
   // });
-   for(let i=0; i < data.length; i++ ){
+  
+  for(let i=0;i < data.length;i++ ){
+
     let d = data[i];
-    //console.log(data.circuit_name);
     var marker = L.marker([d.lat, d.lng], {
       draggable: true,
-      title: d.circuit_name,
-      win_url: d.url,
+      title: d.circuit_name, 
       icon: redIcon
-    }).addTo(myMap).on('click', onClick);
-
+    }).addTo(myMap).on('click', onClick)
+    console.log(d.url);
     function onClick(e) {
-      // To get all contents of e console log it instead of alert
-      // console.log(e);
-      // e.sourceTarget.options.title has the circuit track title
-      // console.log(e.sourceTarget.options.title);
-      //alert(e.latlng);
-      // window.open(this.options.win_url,"_self");
+
+      var audio = new Audio('RACECAR.mp3');
+      audio.play();
+
+      sleep(2000);
       window.open('http://127.0.0.1:5000/dashboard/'+e.sourceTarget.options.title,"_self");
     }
 
-    // Binding a pop-up to our marker
-    // marker.bindPopup("<a href=https://www.w3schools.com>Visit W3Schools</a>");
+    function sleep(ms) {
+
+      var now = new Date().getTime();
+      while(new Date().getTime() < now + ms){ /* do nothing */ } 
+   }
+
+    marker.on('mouseover', function(e){
+
+      e.target.bindPopup(`<img src="${d.url}"width="40" height="40">`).openPopup();
+      start = new Date().getTime();
+    });       
+  
+    marker.on('mouseout', function(e){  
+  
+      var end = new Date().getTime();
+      var time = end - start;
+      if(time > 500){
+        e.target.closePopup();
+      };
+    });
   }
 });
