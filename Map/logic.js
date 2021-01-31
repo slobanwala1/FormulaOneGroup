@@ -45,7 +45,6 @@ d3.json(circuitData, function(data) {
     var marker = L.marker([d.lat, d.lng], {
       draggable: true,
       title: d.name, 
-//      title: `<img src=} ${d.url} ${alt="Girl in a jacket" width="500" height="600">}`, 
       win_url: d.url, 
       icon: redIcon
     }).addTo(myMap).on('click', onClick)
@@ -55,10 +54,10 @@ d3.json(circuitData, function(data) {
       //alert(e.latlng);
       var audio = new Audio('RACECAR.mp3');
       audio.play();
-      sleep(1000);
+      sleep(2000);
+      
       window.open(this.options.win_url,"_self");
-
-//      window.open('http://127.0.0.1:5000/dashboard/'+e.sourceTarget.options.title,"_self");
+      // window.open('http://127.0.0.1:5000/dashboard/'+e.sourceTarget.options.title,"_self");
     }
     function sleep(ms) {
       var now = new Date().getTime();
@@ -72,13 +71,9 @@ d3.json(circuitData, function(data) {
     marker.on('mouseout', function(e){  
       var end = new Date().getTime();
       var time = end - start;
-      //console.log('Execution time: ' + time);
-      // if(time > 700){
-      // e.target.closePopup();
-    });
-    marker.on('mouseover',function(ev) {
-      marker.openPopup();
+      if(time > 700){
+       e.target.closePopup();
+      };
     });
   }
-
 });
