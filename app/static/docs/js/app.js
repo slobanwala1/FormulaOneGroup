@@ -30,12 +30,19 @@ function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, d
     name: teamName+' Point Breakdown',
     values: [parseInt(driver1_points), parseInt(driver2_points)],
     labels: [driver1_name, driver2_name],
-    type: "pie"
+    type: "pie",
+    marker: {
+      colors: [
+        'rgb(220,8,8)',
+        'rgb(0,0,0)'
+      ]
+    },
+    automargin: true
   }];
 
   var layout = {
-    height: 300,
-    width: 400
+    height: 320,
+    width: 420
   };
 
   Plotly.newPlot("pie_chart", data, layout);

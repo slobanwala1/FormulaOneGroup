@@ -29,11 +29,19 @@ var chart = c3.generate({
       axis: {
       	x: {
           show: true,
-			    default: [0, 1]
+          default: [0, 1],
+          label: {
+            text: 'Lap Number',
+            position: 'outer-center'
+          }
         },
         y: {
           show: true,
-			    default: [0, 1]
+          default: [0, 1],
+          label: {
+            text: 'Lap Time, in milliseconds',
+            position: 'outer-center'
+          }
       	}
       },
       size: {
