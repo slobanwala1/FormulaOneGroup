@@ -41,8 +41,12 @@ function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, d
   }];
 
   var layout = {
+    autosize: true,
     height: 320,
-    width: 420
+    width: 420,
+    margin: {
+      l: -1800
+    }
   };
 
   Plotly.newPlot("pie_chart", data, layout);
