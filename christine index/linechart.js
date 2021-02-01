@@ -2,46 +2,54 @@
 //filter?
 
 var chart = c3.generate({
-      data: {
-          columns: [
-          ],
-          hide: true,
-          colors: {
-              Driver1: '#eb1809',
-              Driver2: '#141313'
-          }
-          //WE WILL HAVE TO ADD A FOR LOOP TO GET THE DRIVERS
-      },
-      names: {
-        data1: 'Driver 1',
-        data2: 'Driver 2'
+  data: {
+      columns: [
+      ],
+      hide: true,
+      colors: {
+          Driver1: '#eb1809',
+          Driver2: '#141313'
       }
-      legend: {
-          show: true,
-          position: 'inset',
-          inset: {
-            anchor: 'bottom-right'
-          }
-      },
-      interaction: {
-        enabled: true
-      },
-      axis: {
-      	x: {
-          show: true,
-			    default: [0, 1]
-        },
-        y: {
-          show: true,
-			    default: [0, 1]
-      	}
-      },
-      size: {
-        height: 320,
-        width: 480
+      //WE WILL HAVE TO ADD A FOR LOOP TO GET THE DRIVERS
+  },
+  names: {
+    data1: 'Driver 1',
+    data2: 'Driver 2'
+  },
+  legend: {
+      show: true,
+      position: 'inset',
+      inset: {
+        anchor: 'bottom-right'
       }
-  }),
-  timeout = 1000;
+  },
+  interaction: {
+    enabled: true
+  },
+  axis: {
+    x: {
+      show: true,
+      default: [0, 1],
+      label: {
+        text: 'Lap Number',
+        position: 'outer-center'
+      }
+    },
+    y: {
+      show: true,
+      default: [0, 1],
+      label: {
+        text: 'Lap Time, in milliseconds',
+        position: 'outer-center'
+      }
+    }
+  },
+  size: {
+    height: 320,
+    width: 480
+  }
+}),
+timeout = 1000;
 
 function addColumn(data, delay){
 	var dataTmp = [data[0], 0]; 

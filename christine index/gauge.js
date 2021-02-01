@@ -10,11 +10,12 @@ var chart = c3.generate({
         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
     },
     gauge: {
-       labels: {                    //could be labels. the docs conflct
+       label: {                    //could be labels. the docs conflct
             format: function(value, ratio) {
-                return value;
+                return (value + ' mph');
             },
-            show: false // to turn off the min/max labels.
+            
+            show: false, // to turn off the min/max labels.
         },
     min: 200, //I'M GOING TO CHANGE THIS SO THAT THE MIN WILL BE THE SLOWEST FAST LAP
     max: 231.5, //I'M GOING TO CHANGE THIS SO THAT THIS IS THE FASTEST FAST LAP
@@ -22,16 +23,17 @@ var chart = c3.generate({
     width: 39 // for adjusting arc thickness
     },
     color: {
-        pattern: ['#F0F5D5', '#F55916', '#F76628', '#F20525'],
+        pattern: ['#F0F5D5', '#F55916', '#F76628', '#F20525', '#F20525'],
         threshold: {
             unit: 'value', // percentage is default
-            max: 225,
-            values: [210, 215, 220, 225]
+            max: 231.5,
+            values: [210, 215, 220, 225, 231.5]
         }
     },
     size: {
         height: 180
     },
+    
 });
 var ticksValues = [200, 205, 210, 215, 217, 219, 221, 223];
 var test = true;
@@ -90,6 +92,6 @@ setInterval(function(){
           columns: [['data', 231]]
       });
   }, 4000);
-}, 4000);
+}, 5000);
 
 //https://c3js.org/samples/chart_gauge.html
