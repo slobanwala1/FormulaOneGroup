@@ -109,7 +109,7 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
       gauge: {
          labels: {                    //could be labels. the docs conflct
               format: function(value, ratio) {
-                  return value;
+                  return (value + ' mph');
               },
               show: false // to turn off the min/max labels.
           },
@@ -123,7 +123,7 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
           threshold: {
               unit: 'value', // percentage is default
               max: 231.5,
-              values: [210, 215, 220, 225, 230, 232]
+              values: [210, 215, 220, 225, 230, 231.5]
           }
       },
       size: {
@@ -185,7 +185,7 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
             columns: [['data', 231]]
         });
     }, 4000);
-  }, 4000);
+  }, 5000);
 // chart 2 start
 
 
@@ -203,13 +203,13 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
       gauge: {
          labels: {                    //could be labels. the docs conflct
               format: function(value, ratio) {
-                  return value;
+                  return (value + ' mph');
               },
               show: false // to turn off the min/max labels.
           },
       min: 200, //I'M GOING TO CHANGE THIS SO THAT THE MIN WILL BE THE SLOWEST FAST LAP
       max: 231.5, //I'M GOING TO CHANGE THIS SO THAT THIS IS THE FASTEST FAST LAP
-      units: ' %',
+      units: '%',
       width: 39 // for adjusting arc thickness
       },
       color: {
@@ -217,7 +217,7 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
           threshold: {
               unit: 'value', // percentage is default
               max: 231.5,
-              values: [210, 215, 220, 225, 230, 232]
+              values: [210, 215, 220, 225, 230, 231.5]
           }
       },
       size: {
@@ -279,7 +279,7 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
             columns: [['data', 231]]
         });
     }, 4000);
-  }, 4000);
+  }, 5000);
 }
 
 // var chart = c3.generate({
