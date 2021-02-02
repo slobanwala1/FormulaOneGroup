@@ -70,8 +70,8 @@ function displayLineChart() {
         	}
         },
         size: {
-          height: 320,
-          width: 480
+          height: 420,
+          width: 1000
         }
     }),
     timeout = 1000;
@@ -113,11 +113,11 @@ function displayLineChart() {
     line_chart.axis.range({
       min: {
         x: 1,
-        y: -7 //change this.
+        y: 10 //change this.
       },
       max: {
         x: 80,
-        y: 10 // change this.
+        y: -7 // change this.
       }
     });
   }, timeout);

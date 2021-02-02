@@ -274,42 +274,72 @@ function displayGauge(driver1_name, driver2_name, driver1_topSpeed, driver2_topS
                     rotate = (d - 2) * 45;
                 return "rotate(" + rotate + ")";
             });
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 201]]
-        });
-    }, 100);
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 205]]
-        });
-    }, 1000);
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 210]]
-        });
-    }, 1500);
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 215]]
-        });
-    }, 2000);
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 220]]
-        });
-    }, 2500);
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 225]]
-        });
-    }, 3000);
-    setTimeout(function () {
-        chart2.load({
-            columns: [['data', 231.5]]
-        });
-    }, 3500);
-  }, 5000);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 201]]
+                });
+            }, 100);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 205]]
+                });
+            }, 300);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 210]]
+                });
+            }, 500);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 215]]
+                });
+            }, 700);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 220]]
+                });
+            }, 900);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 225]]
+                });
+            }, 1100);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 231.5]]
+                });
+            }, 1300);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 225]]
+                });
+            }, 1600);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 220]]
+                });
+            }, 1800);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 215]]
+                });
+            }, 2000);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 210]]
+                });
+            }, 2200);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 205]]
+                });
+            }, 2400);
+            setTimeout(function () {
+                chart2.load({
+                    columns: [['Fastest Lap', 200]]
+                });
+            }, 2400);
+          }, 2400);
 }
 
 // var chart = c3.generate({
