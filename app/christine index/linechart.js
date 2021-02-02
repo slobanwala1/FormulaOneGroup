@@ -52,7 +52,7 @@ var chart = c3.generate({
   timeout = 1000;
 
 function addColumn(data, delay){
-	var dataTmp = [data[0], 0]; 
+	var dataTmp = [data[0], 0];
   setTimeout(function(){
 		chart.internal.d3.transition().duration(100);
     chart.load({
@@ -61,7 +61,7 @@ function addColumn(data, delay){
       ]
     });
   }, timeout);
-  timeout += 200; 
+  timeout += 200;
   data.forEach(function(value, index){
     setTimeout(function(){
 	    dataTmp[index] = value;
@@ -99,7 +99,9 @@ setTimeout(function(){
 timeout += 500;
 
 //here i'll have to add the variable for the drivers
-addColumn(['DRIVERNAME', 6, 5.95, 6.69, 7.47, 3.53, 0.92, 7.21, 4.02, 3.97, 4.18, 4.27], 2000);
+// addColumn(['DRIVERNAME', 6, 5.95, 6.69, 7.47, 3.53, 0.92, 7.21, 4.02, 3.97, 4.18, 4.27], 2000);
+// addColumn(['DRIVERNAME2', 7.45, 7.31, 8.69, 8.74, 5.7, -6.15, 4.4, 4.67, 3.8, 2.02, 3.04], 2000);
+addColumn(['DRIVERNAME', 6, 5.95, 6.69, 7.47, 3.53, 0.92, 7.21, 4.02, 3.97, 4.18, 4.2, 6, 5.95, 6.69, 7.47, 3.53, 0.92, 7.21, 4.02, 3.97, 4.18, 4.27]);
 addColumn(['DRIVERNAME2', 7.45, 7.31, 8.69, 8.74, 5.7, -6.15, 4.4, 4.67, 3.8, 2.02, 3.04], 2000);
 //addColumn(['Country3', 3.82, 3.06, -2.56, 4.43, 2.2, 1.23, 2.53, 2.4, 3.53, 2.62, 2.58], 2000);
 //addColumn(['Country4', 7.58, 8.57, 8.24, 7.54, 4.69, 3.68, 7.62, 6.55, 4.64, 5.02, 4.63], 2000);

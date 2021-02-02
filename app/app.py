@@ -1,5 +1,11 @@
 from flask import Flask, render_template, url_for, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import sys
+
+# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/FormulaOneDB"
+# db = SQLAlchemy(app)
+# migrate = Migrate(app, db)
 
 app = Flask(__name__)
 
