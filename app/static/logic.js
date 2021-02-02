@@ -72,7 +72,7 @@ d3.json("/data", function(data) {
 
     marker.on('mouseover', function(e){
 
-      e.target.bindPopup(`<img src="${d.url}"width="20" height="20">`).openPopup();
+      e.target.bindPopup(`<img src="${d.url}"width="30" height="30">`).openPopup();
       start = new Date().getTime();
     });
 

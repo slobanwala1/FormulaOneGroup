@@ -62,11 +62,11 @@ function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, d
     width: 420,
     hovermode: 'closest',
     showlegend: true,
-    // legend: {
-    //   x: 1,
-    //   xanchor: 'right',
-    //   y: 1
-    // },
+    legend: {
+      x: -.8,
+      xanchor: 'left',
+      y: .8
+    },
     margin: {"t":0,"b":0,"l":0,"r":0}
     // margin: {
     //   l: -1800
@@ -79,7 +79,11 @@ function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, d
 function optionChanged(team_name) {
   console.log("selected:"+team_name);
   var keys = Object.keys(obj);
-  for (const key of keys) {
+  var driver1Name = '';
+  var driver2Name = '';
+  var driver1arr;
+  var driver2arr;
+  for (key of keys) {
     // console.log(obj[key]);
     // console.log(obj[key].teamName);
     if (obj[key].teamName == team_name) {
@@ -91,10 +95,31 @@ function optionChanged(team_name) {
       document.getElementById("driver1_name_display").innerHTML = obj[key].driver1_name;
       document.getElementById("driver2_name_display").innerHTML = obj[key].driver2_name;
       document.getElementById("teamName_display").innerHTML = obj[key].teamName;
-      displayLineChart();
+      driver1Name = obj[key].driver1_name;
+      driver2Name = obj[key].driver2_name;
+    }
+  }
+  var lapObjKeys = Object.keys(lapObj);
+  // var lapCount = count(lapObjKeys);
+  // displayLineChart();
+  for (key of lapObjKeys) {
+    if(lapObj[key].teamName == team_name) {
+      var lapChildObjVals = Object.values(lapObj[key])
+      if(lapObj[key].driver == '1') {
+        driver1arr = lapChildObjVals;
+      } else {
+        driver2arr = lapChildObjVals;
+      }
+      console.log('array:');
+      console.log(driver1arr);
+      console.log(driver2arr);
 
     }
   }
+  displayLineChart(driver1Name, driver2Name, driver1arr, driver2arr);
+  //   displayLineChart(teamName, lapObj[key].driver1_name, lapObj[key].driver2_name, lapObj[key].);
+  // }
+  // for(var i = lapCount; i < lapCount)
   // console.log('cur team:');
   // console.log(curTeam);
 }

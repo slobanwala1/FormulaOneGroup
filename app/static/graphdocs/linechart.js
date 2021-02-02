@@ -1,6 +1,11 @@
 //here i'll have to do a d3.json?
 //filter?
-function displayLineChart() {
+function displayLineChart(driver1Name, driver2Name, driver1arr, driver2arr) {
+  console.log('in line chart');
+  console.log(driver1Name);
+  console.log(driver2Name);
+  console.log(driver1arr);
+  console.log(driver2arr);
   var linechart = c3.generate({
   bindto: '#linechart',
   data: {

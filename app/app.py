@@ -46,25 +46,23 @@ circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.849
                {"circuit_name":"Interlagos circuit", "lat":"-23.7036", "lng":"-46.6997", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Brazil%20carbon.png.transform/2col/image.png"},
                {"circuit_name":"Yas Marina Circuit", "lat":"24.4672", "lng":"54.6031", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu%20Dhabi%20carbon.png.transform/2col/image.png"}]
 
-circuitTeamInfo = [{"teamName":"Ferrari", "driver1_name":"Ferrari Driver1", "driver2_name":"Ferrari Driver2", "driver1_topSpeed":"215", "driver2_topSpeed":"225",
-                    "circuit_topSpeed":"231.5", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"},
-                    {"teamName":"Haas", "driver1_name":"Haas Driver1", "driver2_name":"Haas Driver2", "driver1_topSpeed":"209", "driver2_topSpeed":"219",
-                    "circuit_topSpeed":"231.5", "driver1_points":"8", "driver2_points":"3", "circuit_name":"Albert Park Grand Prix Circuit"}]
+circuitTeamInfoUS = [{"teamName":"Ferrari", "driver1_name":"Charles Leclerc", "driver2_name":"Sebastian Vettel", "driver1_topSpeed":"206.374", "driver2_topSpeed":"194.262",
+                    "circuit_topSpeed":"231.5", "driver1_points":"13", "driver2_points":"0", "circuit_name":"Circuit of the Americas"},
+                    {"teamName":"Haas", "driver1_name":"Romain Grosjean", "driver2_name":"Kevin Magnussen", "driver1_topSpeed":"209", "driver2_topSpeed":"219",
+                    "circuit_topSpeed":"231.5", "driver1_points":"8", "driver2_points":"3", "circuit_name":"Circuit of the Americas"}]
 
-circuitTeamLapInfo = [{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
-                  {"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
-                  {"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"}]
+# circuitTeamLapInfo = [{"Lap":"1", "driver1_LapTime":"104832", "driver2_LapTime":"01:33.7"},{"Lap":"2", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
+#                   {"Lap":"3", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"4", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
+#                   {"Lap":"5", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"}]
+TeamLapInfoUS = [{"teamName":"Ferrari","driver":"1", "1":"104832", "2":"102605", "3":"101743", "4":"101504", "5": "101759", "6":"101722", "7":"102576", "8":"102048",
+                    "9":"102567", "10":"101953"},
+                 {"teamName":"Ferrari","driver":"2", "1":"106688", "2":"104089", "3":"103091", "4":"102300", "5": "102194", "6":"102165", "7":"102603"}]
 
-circuitTopTen = [{"driver_name":"test1", "teamName":"test1", "time":"01:30.7", "position":'1'},
-                 {"driver_name":"name2", "teamName":"test2", "time":"01:30.7", "position":'2'},
-                 {"driver_name":"name1", "teamName":"test3", "time":"01:32.7", "position":'3'},
-                 {"driver_name":"name4", "teamName":"test4", "time":"01:31.7", "position":'4'},
-                 {"driver_name":"name2", "teamName":"test5", "time":"01:34.7", "position":'5'},
-                 {"driver_name":"name6", "teamName":"test6", "time":"01:33.7", "position":'6'},
-                 {"driver_name":"name3", "teamName":"test7", "time":"01:36.7", "position":'7'},
-                 {"driver_name":"name8", "teamName":"test8", "time":"01:35.7", "position":'8'},
-                 {"driver_name":"name4", "teamName":"test9", "time":"01:38.7", "position":'9'},
-                 {"driver_name":"name10", "teamName":"test10", "time":"01:37.7", "position":'10'}]
+# Circuit of americas
+# circuitid : 69, constructorid: 6, raceid: 1028, driver id: 844, Name: Charles Leclerc, code: LEC
+# circuitid : 69, constructorid: 6, raceid: 1028, driver id: 20, Name: sebastian vettel, code: VET
+# circuit gilles Villeneuve
+
 
 mapURL = [{"mapURL":"http://127.0.0.1:5000/2019"}]
 
@@ -89,11 +87,15 @@ def access_dataTwo():
 def access_dataThree(request_params):
     key, value = request_params.split('_')
     if value == 'CircuitInfo':
-        return jsonify(circuitTeamInfo)
+        if key == 'Circuit of the Americas':
+            return jsonify(circuitTeamInfoUS)
+        else:
+            return jsonify(circuitTeamInfoUS)
     elif value == 'LapInfo':
-        return jsonify(circuitTeamLapInfo)
-    elif value == 'TopTen':
-        return jsonify(circuitTopTen)
+        if key == 'Circuit of the Americas':
+            return jsonify(TeamLapInfoUS)
+        else:
+            return jsonify(TeamLapInfoUS)
     else:
         return jsonify(circuitList)
 
