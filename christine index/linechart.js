@@ -22,6 +22,7 @@ var chart = c3.generate({
       inset: {
         anchor: 'bottom-right'
       }
+<<<<<<< HEAD
   },
   interaction: {
     enabled: true
@@ -33,6 +34,39 @@ var chart = c3.generate({
       label: {
         text: 'Lap Number',
         position: 'outer-center'
+=======
+      legend: {
+          show: true,
+          position: 'inset',
+          inset: {
+            anchor: 'bottom-right'
+          }
+      },
+      interaction: {
+        enabled: true
+      },
+      axis: {
+      	x: {
+          show: true,
+          default: [0, 1],
+          label: {
+            text: 'Lap Number',
+            position: 'outer-center'
+          }
+        },
+        y: {
+          show: true,
+          default: [0, 1],
+          label: {
+            text: 'Lap Time, in milliseconds',
+            position: 'outer-center'
+          }
+      	}
+      },
+      size: {
+        height: 320,
+        width: 480
+>>>>>>> 5c5d60887515ed3a8c8f26376967416f4f6bd952
       }
     },
     y: {

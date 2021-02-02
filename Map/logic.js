@@ -29,8 +29,8 @@ d3.json(circuitData, function(data) {
     layers: [streetmap, circuits]
   });
   // 
-  var greenIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  var redIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
     iconSize: [25, 41],
     iconAnchor: [12, 41],
@@ -38,7 +38,6 @@ d3.json(circuitData, function(data) {
     shadowSize: [41, 41]
   });
   
-  //L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
   // loop through the JSON and create markers for all circuits
 
    for(let i=0;i < data.length;i++ ){
@@ -47,15 +46,34 @@ d3.json(circuitData, function(data) {
       draggable: true,
       title: d.name, 
       win_url: d.url, 
-      icon: greenIcon
-    }).addTo(myMap).on('click', onClick);
+      icon: redIcon
+    }).addTo(myMap).on('click', onClick)
+//    });
   
     function onClick(e) {
       //alert(e.latlng);
+      var audio = new Audio('RACECAR.mp3');
+      audio.play();
+      sleep(2000);
+      
       window.open(this.options.win_url,"_self");
+      // window.open('http://127.0.0.1:5000/dashboard/'+e.sourceTarget.options.title,"_self");
     }
-
-    // Binding a pop-up to our marker
-    // marker.bindPopup("<a href=https://www.w3schools.com>Visit W3Schools</a>");
+    function sleep(ms) {
+      var now = new Date().getTime();
+      while(new Date().getTime() < now + ms){ /* do nothing */ } 
+   }
+    marker.on('mouseover', function(e){
+      e.target.bindPopup(`<img src="${d.url}">`).openPopup();
+      start = new Date().getTime();
+    });        
+  
+    marker.on('mouseout', function(e){  
+      var end = new Date().getTime();
+      var time = end - start;
+      if(time > 700){
+       e.target.closePopup();
+      };
+    });
   }
 });

@@ -12,7 +12,7 @@ var chart = c3.generate({
     gauge: {
        labels: {                    //could be labels. the docs conflct
             format: function(value, ratio) {
-                return value;
+                return (value + ' mph');
             },
             show: false // to turn off the min/max labels.
         },
@@ -55,41 +55,41 @@ setInterval(function(){
                   rotate = (d - 2) * 45;
               return "rotate(" + rotate + ")";
           });
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 201]]
-      });
-  }, 100);
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 205]]
-      });
-  }, 1000);
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 210]]
-      });
-  }, 1500);
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 215]]
-      });
-  }, 2000);
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 220]]
-      });
-  }, 2500);
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 225]]
-      });
-  }, 3000);
-  setTimeout(function () {
-      chart.load({
-          columns: [['data', 231]]
-      });
-  }, 4000);
-}, 4000);
 
-//https://c3js.org/samples/chart_gauge.html
+          setTimeout(function () {
+            chart.load({
+                columns: [['data', 201]]
+            });
+        }, 100);
+        setTimeout(function () {
+            chart.load({
+                columns: [['data', 205]]
+            });
+        }, 1000);
+        setTimeout(function () {
+            chart.load({
+                columns: [['data', 210]]
+            });
+        }, 1500);
+        setTimeout(function () {
+            chart.load({
+                columns: [['data', 215]]
+            });
+        }, 2000);
+        setTimeout(function () {
+            chart.load({
+                columns: [['data', 220]]
+            });
+        }, 2500);
+        setTimeout(function () {
+            chart.load({
+                columns: [['data', 225]]
+            });
+        }, 3000);
+        setTimeout(function () {
+            chart.load({
+                columns: [['data', 231]]
+            });
+        }, 4000);
+      }, 5000);
+      //https://c3js.org/samples/chart_gauge.html
