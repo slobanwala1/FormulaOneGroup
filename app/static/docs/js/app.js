@@ -20,11 +20,11 @@ function fetchData() {
 
 // // Display the default plot
 function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, driver2_points) {
-  console.log(teamName);
-  console.log(driver1_name);
-  console.log(driver2_name);
-  console.log(driver1_points);
-  console.log(driver2_points);
+  console.log("teamname: "+teamName);
+  console.log("driver1 name: "+driver1_name);
+  console.log("driver2 name: "+driver2_name);
+  console.log("driver1 points: "+driver1_points);
+  console.log("driver2 points: "+driver2_points);
   var totalPoints = parseInt(driver1_points+driver2_points);
   var data = [{
     name: teamName+' Point Breakdown',
@@ -64,7 +64,14 @@ function optionChanged(team_name) {
       // curTeam = obj[key].teamName;
       displayGauge(obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_topSpeed, obj[key].driver2_topSpeed, obj[key].circuit_topSpeed);
       displayPieChart(obj[key].teamName, obj[key].driver1_name, obj[key].driver2_name, obj[key].driver1_points, obj[key].driver2_points);
+      document.getElementById("driver1_name_display").innerHTML = obj[key].driver1_name;
+      document.getElementById("driver2_name_display").innerHTML = obj[key].driver2_name;
+      document.getElementById("teamName_display").innerHTML = obj[key].teamName;
+      console.log(document.getElementById("circuitName_display"));
+      // document.getElementById("circuitName_display").text = circuit_name;
+      document.getElementById('circuitName_display').innerHTML = circuit_name;
       displayLineChart();
+
     }
   }
   // console.log('cur team:');
@@ -73,6 +80,7 @@ function optionChanged(team_name) {
 
 function init() {
   fetchData();
+
 }
 
 init();

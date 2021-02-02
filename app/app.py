@@ -47,9 +47,9 @@ circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.849
                {"circuit_name":"Yas Marina Circuit", "lat":"24.4672", "lng":"54.6031", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu%20Dhabi%20carbon.png.transform/2col/image.png"}]
 
 circuitTeamInfo = [{"teamName":"Ferrari", "driver1_name":"Ferrari Driver1", "driver2_name":"Ferrari Driver2", "driver1_topSpeed":"215", "driver2_topSpeed":"225",
-                    "circuit_topSpeed":"231", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"},
+                    "circuit_topSpeed":"231.5", "driver1_points":"5", "driver2_points":"8", "circuit_name":"Albert Park Grand Prix Circuit"},
                     {"teamName":"Haas", "driver1_name":"Haas Driver1", "driver2_name":"Haas Driver2", "driver1_topSpeed":"209", "driver2_topSpeed":"219",
-                    "circuit_topSpeed":"228", "driver1_points":"8", "driver2_points":"3", "circuit_name":"Albert Park Grand Prix Circuit"}]
+                    "circuit_topSpeed":"231.5", "driver1_points":"8", "driver2_points":"3", "circuit_name":"Albert Park Grand Prix Circuit"}]
 
 circuitTeamLapInfo = [{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
                   {"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"1", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},

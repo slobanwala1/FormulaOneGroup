@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2019 {Grand Prix} - {Team}</title>
+  <title>2019 Grand Prix</title>
   <link rel="stylesheet" type="text/css" href="../static/docs/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../static/docs/css/style.css">
   <link href="../static/images/f1-logo-red.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16"/>
@@ -48,18 +48,20 @@
       text-align: center;
     }
   </style>
-<script>
-    var circuit_name = JSON.parse('{{data | tojson}}');
-</script>
-<body>
 
+<body>
+  <script>
+      var circuit_name = JSON.parse('{{data | tojson}}');
+  </script>
 
 <h1>
   <img src="../static/images/f1-logo-red.png" width="95" height="60" style="width: 5%; float: left"/>
-  {Grand Prix} - 2019 Results
+
   <button type="button" style="float:right" onclick="alert('Back to Map!')">Back to Map</button>
 </h1>
-<h2>{Team Name} {Team Logo}</h2>
+<h1 id="circuitName_display">{Grand Prix} - 2019 Results<h1>
+<h2 id="teamName_display">{Team Name} </h2>
+<!-- <h2 id="teamLogo_display">{Team Logo} </h2> -->
 
   <div class="container">
     <div class="row">
@@ -88,10 +90,10 @@
         <br>
       </div>
       <div class="col-sm-8" align="center">
-        <h5 style="width: 50%; float:left">
+        <h5 id="driver1_name_display" style="width: 50%; float:left">
           {Driver 1}
         </h5>
-        <h5 style="width: 50%; float:right">
+        <h5 id="driver2_name_display" style="width: 50%; float:right">
          {Driver 2}
         </h5>
         <br>
