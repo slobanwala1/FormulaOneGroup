@@ -47,6 +47,12 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+    /* body {
+      background-image: url('../static/images/formula1background.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    } */
   </style>
 
 <body>
@@ -57,7 +63,7 @@
 <h1>
   <img src="../static/images/f1-logo-red.png" width="95" height="60" style="width: 5%; float: left"/>
 
-  <button type="button" style="float:right" onclick="alert('Back to Map!')">Back to Map</button>
+  <button type="button" style="float:right" onclick="backToMap()">Back to Map</button>
 </h1>
 <h1 id="circuitName_display">{Grand Prix} - 2019 Results<h1>
 <h2 id="teamName_display">{Team Name} </h2>
@@ -69,6 +75,7 @@
         <div class="well">
           <h5>Team:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)">
+            <option selected="selected">Choose A Team</option>
             <option value="Mercedes">Mercedes-Benz</option>
             <option value="Ferrari">Ferrari</option>
             <option value="RedBull">Red Bull Racing</option>

@@ -1,11 +1,14 @@
 // shanil testing
 var obj;
+var lapObj;
 var curTeam;
 
 function fetchData() {
   var circuitName = circuit_name;
+  document.getElementById('circuitName_display').innerHTML = "Grand Prix: "+circuit_name;
   var infoType = 'CircuitInfo'; // either 'CircuitInfo', 'LapInfo' or 'TopTen'
   var params = circuitName.concat('_', infoType);
+  // Fetch circuit info and store into obj
   fetch(`/data/${params}`, {
       headers : {
         'Content-Type': 'application/json',
@@ -16,6 +19,19 @@ function fetchData() {
   .then(res => res.json())
   .then(data => obj = data)
   .then(() => console.log(obj));
+  // Fetch lap info and store into lapObj
+  infoType = 'LapInfo';
+  params = circuitName.concat('_', infoType);
+  fetch(`/data/${params}`, {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
+  .then(res => res.json())
+  .then(data => lapObj = data)
+  .then(() => console.log(lapObj));
 }
 
 // // Display the default plot
@@ -37,16 +53,24 @@ function displayPieChart(teamName, driver1_name, driver2_name, driver1_points, d
         'rgb(0,0,0)'
       ]
     },
-    automargin: true
+    automargin: false
   }];
 
   var layout = {
     autosize: true,
     height: 320,
     width: 420,
-    margin: {
-      l: -1800
-    }
+    hovermode: 'closest',
+    showlegend: true,
+    // legend: {
+    //   x: 1,
+    //   xanchor: 'right',
+    //   y: 1
+    // },
+    margin: {"t":0,"b":0,"l":0,"r":0}
+    // margin: {
+    //   l: -1800
+    // }
   };
 
   Plotly.newPlot("pie_chart", data, layout);
@@ -67,9 +91,6 @@ function optionChanged(team_name) {
       document.getElementById("driver1_name_display").innerHTML = obj[key].driver1_name;
       document.getElementById("driver2_name_display").innerHTML = obj[key].driver2_name;
       document.getElementById("teamName_display").innerHTML = obj[key].teamName;
-      console.log(document.getElementById("circuitName_display"));
-      // document.getElementById("circuitName_display").text = circuit_name;
-      document.getElementById('circuitName_display').innerHTML = circuit_name;
       displayLineChart();
 
     }
@@ -78,6 +99,9 @@ function optionChanged(team_name) {
   // console.log(curTeam);
 }
 
+function backToMap() {
+  window.open('http://127.0.0.1:5000/2019',"_self");
+}
 function init() {
   fetchData();
 
