@@ -2,20 +2,39 @@
 //filter?
 
 var chart = c3.generate({
-      data: {
-          columns: [
-          ],
-          hide: true,
-          colors: {
-              Driver1: '#eb1809',
-              Driver2: '#141313'
-          }
-          //WE WILL HAVE TO ADD A FOR LOOP TO GET THE DRIVERS
-      },
-      names: {
-        data1: 'Driver 1',
-        data2: 'Driver 2'
+  data: {
+      columns: [
+      ],
+      hide: true,
+      colors: {
+          Driver1: '#eb1809',
+          Driver2: '#141313'
       }
+      //WE WILL HAVE TO ADD A FOR LOOP TO GET THE DRIVERS
+  },
+  names: {
+    data1: 'Driver 1',
+    data2: 'Driver 2'
+  },
+  legend: {
+      show: true,
+      position: 'inset',
+      inset: {
+        anchor: 'bottom-right'
+      }
+<<<<<<< HEAD
+  },
+  interaction: {
+    enabled: true
+  },
+  axis: {
+    x: {
+      show: true,
+      default: [0, 1],
+      label: {
+        text: 'Lap Number',
+        position: 'outer-center'
+=======
       legend: {
           show: true,
           position: 'inset',
@@ -47,9 +66,24 @@ var chart = c3.generate({
       size: {
         height: 320,
         width: 480
+>>>>>>> 5c5d60887515ed3a8c8f26376967416f4f6bd952
       }
-  }),
-  timeout = 1000;
+    },
+    y: {
+      show: true,
+      default: [0, 1],
+      label: {
+        text: 'Lap Time, in milliseconds',
+        position: 'outer-center'
+      }
+    }
+  },
+  size: {
+    height: 420,
+    width: 780
+  }
+}),
+timeout = 1000;
 
 function addColumn(data, delay){
 	var dataTmp = [data[0], 0]; 
