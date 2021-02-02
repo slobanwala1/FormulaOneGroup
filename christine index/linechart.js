@@ -45,8 +45,8 @@ var chart = c3.generate({
     }
   },
   size: {
-    height: 320,
-    width: 480
+    height: 420,
+    width: 780
   }
 }),
 timeout = 1000;
