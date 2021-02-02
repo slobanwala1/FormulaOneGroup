@@ -11,6 +11,43 @@
   <script src="../static/graphdocs/c3.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
+<style>
+    .topThree {
+      position: relative;
+      width: 50%;
+    }
+    .image {
+      display: block;
+      width: 200px;
+      height: auto;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: rgb(221, 8, 8);
+    }
+    .topThree:hover .overlay {
+      opacity: 0.6;
+    }
+    .text {
+      color: white;
+      font-size: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  </style>
 <script>
     var circuit_name = JSON.parse('{{data | tojson}}');
 </script>
@@ -41,13 +78,13 @@
             <option value="Haas">Haas</option>
             <option value="Williams">Williams</option>
           </select>
-          <div id="pie_chart" style="float:left"></div>
+          <div id="pie_chart" style="float:right"></div>
         </div>
         <br>
         <br>
         <br>
         <br>
-        
+
         <br>
       </div>
       <div class="col-sm-8" align="center">
@@ -75,7 +112,26 @@
       </div>
 
       <div class="col-sm-2" align="left">
-        <h5>Top 10 Finishers</h5>
+        <h5>Top 3 Finishers</h5>
+        <div class="topThree">
+          <img src="../static/images/top3/Hamilton.jpeg" alt="Lewis Hamilton" class="image">
+          <div class="overlay">
+            <div class="text">Lewis Hamilton - Mercedes</div>
+          </div>
+        </div>
+        <div class="topThree">
+          <img src="../static/images/top3/Bottas.jpeg" alt="Valterri Bottas" class="image">
+          <div class="overlay">
+            <div class="text">Valterri Botas - Mercedes</div>
+          </div>
+        </div>
+        <div class="topThree">
+          <img src="../static/images/top3/Verstappen.jpeg" alt="Max Verstappen" class="image">
+          <div class="overlay">
+            <div class="text">Max Verstappen - Red Bull</div>
+          </div>
+        </div>
+        <h5>4th - 10th</h5>
         <table border="1" class="dataframe">
           <thead>
             <tr style="text-align: left;">
@@ -86,23 +142,8 @@
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Lewis Hamilton</td>
-              <td>Mercedes</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Valterri Bottas</td>
-              <td>Mercedes</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Max Verstappen</td>
-              <td>Red Bull</td>
-            </tr>
-            <tr>
               <td>4</td>
-              <td>Charles Leclrec</td>
+              <td>Charles Leclerc</td>
               <td>Ferrari</td>
             </tr>
             <tr>
@@ -137,49 +178,11 @@
             </tr>
           </tbody>
         </table>
-
       </div>
     </div>
     <div class="row">
       <div id="linechart">
       </div>
-          <!-- <table>
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-      </tr>
-      <tr>
-        <td>Ernst Handel</td>
-        <td>Roland Mendel</td>
-        <td>Austria</td>
-      </tr>
-      <tr>
-        <td>Island Trading</td>
-        <td>Helen Bennett</td>
-        <td>UK</td>
-      </tr>
-      <tr>
-        <td>Laughing Bacchus Winecellars</td>
-        <td>Yoshi Tannamuri</td>
-        <td>Canada</td>
-      </tr>
-      <tr>
-        <td>Magazzini Alimentari Riuniti</td>
-        <td>Giovanni Rovelli</td>
-        <td>Italy</td>
-      </tr>
-    </table> -->
     </div>
   </div>
 
