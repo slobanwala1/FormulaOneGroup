@@ -3,11 +3,25 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import sys
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/FormulaOneDB"
-# db = SQLAlchemy(app)
-# migrate = Migrate(app, db)
-
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/FormulaOneDB"
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+class circuitsModel(db.Model):
+    __tablename__ = 'circuits'
+
+    circuitid = db.Column(db.Integer, primary_key=True)
+    circuitref = db.Column(db.String())
+    circuit_name = db.Column(db.String())
+
+    def __init__(self, circuitid, circuitref, circuit_name):
+        self.circuitid = circuitid
+        self.circuitref = circuitref
+        self.circuit_name = circuit_name
+
+    def __repr__(self):
+        return f"<Circuit {self.circuit_name}>"
 
 records = [{'name':'John'},{'name':'Suzy'}]
 circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.8497", "lng":"144.968", "url":"https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png"},
@@ -84,4 +98,4 @@ def access_dataThree(request_params):
         return jsonify(circuitList)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
