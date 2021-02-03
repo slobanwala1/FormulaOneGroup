@@ -30,7 +30,7 @@ function fetchData() {
 
     })
   .then(res => res.json())
-  .then(data => lapObj = data)
+  .then(data2 => lapObj = data2)
   .then(() => console.log(lapObj));
 }
 
