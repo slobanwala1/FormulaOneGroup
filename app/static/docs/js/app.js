@@ -83,6 +83,7 @@ function optionChanged(team_name) {
   var driver2Name = '';
   var driver1arr;
   var driver2arr;
+  var newDriverInfo = false;
   for (key of keys) {
     // console.log(obj[key]);
     // console.log(obj[key].teamName);
@@ -104,19 +105,27 @@ function optionChanged(team_name) {
   // displayLineChart();
   for (key of lapObjKeys) {
     if(lapObj[key].teamName == team_name) {
+      newDriverInfo = true;
       var lapChildObjVals = Object.values(lapObj[key])
       if(lapObj[key].driver == '1') {
         driver1arr = lapChildObjVals;
       } else {
         driver2arr = lapChildObjVals;
       }
-      console.log('array:');
-      console.log(driver1arr);
-      console.log(driver2arr);
+      // remove the driver entry and teamname entry, only keep values
+
 
     }
   }
-  displayLineChart(driver1Name, driver2Name, driver1arr, driver2arr);
+  if(newDriverInfo) {
+    console.log(typeof driver1arr);
+    driver1arr.pop();
+    driver1arr.pop();
+    driver2arr.pop();
+    driver2arr.pop();
+    displayLineChart(driver1Name, driver2Name, driver1arr, driver2arr);
+  }
+  newDriverInfo = false;
   //   displayLineChart(teamName, lapObj[key].driver1_name, lapObj[key].driver2_name, lapObj[key].);
   // }
   // for(var i = lapCount; i < lapCount)

@@ -49,18 +49,36 @@ circuitList = [{"circuit_name":"Albert Park Grand Prix Circuit", "lat": "-37.849
 circuitTeamInfoUS = [{"teamName":"Ferrari", "driver1_name":"Charles Leclerc", "driver2_name":"Sebastian Vettel", "driver1_topSpeed":"206.374", "driver2_topSpeed":"194.262",
                     "circuit_topSpeed":"231.5", "driver1_points":"13", "driver2_points":"0", "circuit_name":"Circuit of the Americas"},
                     {"teamName":"Haas", "driver1_name":"Romain Grosjean", "driver2_name":"Kevin Magnussen", "driver1_topSpeed":"209", "driver2_topSpeed":"219",
-                    "circuit_topSpeed":"231.5", "driver1_points":"8", "driver2_points":"3", "circuit_name":"Circuit of the Americas"}]
+                    "circuit_topSpeed":"231.5", "driver1_points":"8", "driver2_points":"3", "circuit_name":"Circuit of the Americas"},
+                    {"teamName":"Mercedes", "driver1_name":"Lewis Hamilton", "driver2_name":"Valtteri Bottas", "driver1_topSpeed":"201.6", "driver2_topSpeed":"204.696",
+                    "circuit_topSpeed":"231.5", "driver1_points":"18", "driver2_points":"25", "circuit_name":"Circuit of the Americas"}]
 
 # circuitTeamLapInfo = [{"Lap":"1", "driver1_LapTime":"104832", "driver2_LapTime":"01:33.7"},{"Lap":"2", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
 #                   {"Lap":"3", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},{"Lap":"4", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"},
 #                   {"Lap":"5", "driver1_LapTime":"01:33.7", "driver2_LapTime":"01:33.7"}]
 TeamLapInfoUS = [{"teamName":"Ferrari","driver":"1", "1":"104832", "2":"102605", "3":"101743", "4":"101504", "5": "101759", "6":"101722", "7":"102576", "8":"102048",
                     "9":"102567", "10":"101953"},
-                 {"teamName":"Ferrari","driver":"2", "1":"106688", "2":"104089", "3":"103091", "4":"102300", "5": "102194", "6":"102165", "7":"102603"}]
+                 {"teamName":"Ferrari","driver":"2", "1":"106688", "2":"104089", "3":"103091", "4":"102300", "5": "102194", "6":"102165", "7":"102603"},
+                 {"teamName":"Mercedes","driver":"1", "1":"104832", "2":"102605", "3":"101743", "4":"101504", "5": "101759", "6":"101722", "7":"102576", "8":"102048",
+                    "9":"102567", "10":"101953"},
+                 {"teamName":"Mercedes","driver":"2", "1":"101436", "2":"100986", "3":"100789", "4":"100429", "5": "100847", "6":"101578", "7":"101390", "8":"102044",
+                    "9":"100988", "10":"101535", "11":"100284", "12":"101354", "13":"101069", "14":"101054", "15":"119238", "16":"99201", "17":"98943", "18":"98969",
+                    "19":"98916", "20":"100135", "21":"99927", "22":"100284", "23":"100401", "24":"100454", "25":"100094", "26":"100136", "27":"99770", "28":"99957",
+                    "29":"99618", "30":"100311", "31":"99303", "32":"100325", "33":"101418", "34":"101179", "35":"100319", "36":"119268", "37":"96957", "38":"98668",
+                    "39":"99578", "40":"98106", "41":"98814", "42":"99183", "43":"98606", "44":"98691", "45":"98680", "46":"99097", "47":"98637", "48":"98456",
+                    "49":"98566", "50":"99667", "51":"100412", "52":"99216", "53":"99393", "54":"99054", "55":"100530", "56":"100351"},
+                 {"teamName":"Mercedes","driver":"2", "1":"103228", "2":"101043", "3":"101259", "4":"101231", "5": "100861", "6":"100945", "7":"101368", "8":"101367",
+                    "9":"101614", "10":"101761", "11":"101578", "12":"101424", "13":"100350", "14":"100647", "15":"101193", "16":"101183", "17":"100863", "18":"100986",
+                    "19":"101899", "20":"101446", "21":"101898", "22":"101616", "23":"103383", "24":"119288", "25":"984464", "26":"98998", "27":"99347", "28":"99335",
+                    "29":"99418", "30":"99189", "31":"100312", "32":"99497", "33":"99361", "34":"99763", "35":"100096", "36":"99234", "37":"99222", "38":"99162",
+                    "39":"99106", "40":"99213", "41":"99037", "42":"99239", "43":"98968", "44":"99689", "45":"99289", "46":"98842", "47":"98791", "48":"99992",
+                    "49":"100978", "50":"101081", "51":"100437", "52":"100137", "53":"100928", "54":"100503", "55":"101446", "56":"101578"}]
 
 # Circuit of americas
 # circuitid : 69, constructorid: 6, raceid: 1028, driver id: 844, Name: Charles Leclerc, code: LEC
 # circuitid : 69, constructorid: 6, raceid: 1028, driver id: 20, Name: sebastian vettel, code: VET
+# circuitid : 69, constructorid: 131, raceid: 1028, driver id: 1, Name: Lewis Hamilton, code: HAM
+# circuitid : 69, constructorid: 131, raceid: 1028, driver id: 822, Name: Valtteri Bottas, code: BOT
 # circuit gilles Villeneuve
 
 
