@@ -96,7 +96,6 @@ def access_data():
 @app.route('/dashboard/<circuit>')
 def access_dashboard(circuit):
     print(circuit, file=sys.stderr)
-    shutdown_server()
     return render_template('dashboard-index.html', data = circuit)
 
 @app.route('/data')
@@ -119,10 +118,6 @@ def access_dataThree(request_params):
     else:
         return jsonify(circuitList)
 
-@app.route('/shutdown')
-def shutdown():
-    shutdown_server()
-    return 'Server shutting down...'
 
 if __name__ == "__main__":
     app.run(debug=True)

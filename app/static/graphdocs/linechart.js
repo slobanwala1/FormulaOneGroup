@@ -60,7 +60,7 @@ function displayLineChart(driver1Name, driver2Name, driver1arr, driver2arr) {
     width: 980
   }
 }),
-timeout = 5000;
+timeout = 1000;
 function addColumn(data, delay){
 var dataTmp = [data[0], 0];
 setTimeout(function(){
