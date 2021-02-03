@@ -10,3 +10,10 @@ The two drivers get the same equipment, so comparing results for the two drivers
 In ths analysis, we're analyzing the results from the 2019 season. To do this, we've plotted all of the circuits of the 2019 Formula One season using Leafley. We've included an image of the circuit, which we scraped from Formula1.com, using ParseHub. We used the data from a collection of thorough CSVs with data on Formula 1 races going back to 1950. If you hover of ther markers on the map, you'll get a link to a dashboard with a drop down menu listing all of the teams. The dashboard will have a comparison of the points the drivers scored, a gauge with the drivers' total speeds and a line chart with the lap speeds for the two drivers. The dashboard will populated by a database creaed by the csv datavbase and powered by a flask app, that will include a static table of the final championship standings.
 
 We chose to focus on a single season. However, time permitted, we could have done an analysis of every season, and we could have performed an analysis to answer the question of who is the greatest Formula 1 driver ever. Also, the next step would be to automate procurement of the data so that information could be updated as the seasons progress.
+
+We tried to use Heroku to deploy the Flask server however there were numerous npm errors so it wouldn't be handled. Seems like there's libraries being used that
+aren't being supported by Heroku or need to be installed.
+
+<br>
+<br>
+<img src="images/HerokuTrouble.PNG" width="500">
